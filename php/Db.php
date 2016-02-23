@@ -15,7 +15,7 @@ class Db {
         if(!isset(self::$connection)) {
             // Load configuration as an array. Use the actual location of your configuration file
             $config = parse_ini_file('config.ini'); 
-            self::$connection = new mysqli('localhost',$config['username'],$config['password'],$config['dbname']);
+            self::$connection = new mysqli('us-cdbr-iron-east-03.cleardb.net',$config['username'],$config['password'],$config['dbname']);
         }
 
         // If connection was not successful, handle the error
