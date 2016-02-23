@@ -23,7 +23,7 @@ function db_connect() {
 		// Load configuration as an array. Use the actual location of your configuration file 
 		// Put the configuration file outside of the document root 
 		$config = parse_ini_file('./config.ini');  
-        $connection = mysqli_connect('localhost',$config['username'],$config['password'],$config['dbname']); 
+        $connection = mysqli_connect('us-cdbr-iron-east-03.cleardb.net',$config['username'],$config['password'],$config['dbname']); 
     } 
  
     // If connection was not successful, handle the error 
