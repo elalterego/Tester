@@ -1,0 +1,21 @@
+.form-container{
+	display:block;
+	width: 1105px;
+	margin: 50px auto;
+	padding:auto;
+
+}
+
+.forms {
+	width: 500px;
+	margin: auto;
+	padding: 20px;
+	display: block;
+	overflow: hidden;
+}
+
+.forms paper-button{
+	margin-top: 20px;
+	float: right;
+
+}

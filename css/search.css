@@ -1,0 +1,14 @@
+.category-gallery {
+	width: 1200px;
+	margin: auto;
+    padding: 0px 100px;
+    padding-bottom: 50px;
+}
+
+.category-gallery h3 {
+    margin-left: 50px;
+}
+
+.category-gallery img {
+    margin: 10px;
+}

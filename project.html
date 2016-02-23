@@ -1,0 +1,61 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Abundantia</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/project.css">
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+        <!-- build:js bower_components/webcomponentsjs/webcomponents-lite.min.js -->
+        <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+        <!-- endbuild -->
+
+        <link rel="import" href="elements/header-main.html">
+        <link rel="import" href="elements/footer-main.html">
+        <link rel="import" href="elements/project-title.html">
+        <link rel="import" href="elements/project-blog.html">
+        <link rel="import" href="elements/project-rewards.html">
+
+        <script>
+
+        </script>
+    </head>
+    <body unresolved>
+           
+        <header class="main-header"> 
+            <header-main></header-main>
+        </header>
+
+        <main class="project-body">      
+            <project-title id="title" ></project-title>  
+            <project-blog></project-blog> 
+            <project-rewards></project-rewards> 
+ 
+        </main>
+
+        <footer class="main-footer">
+            <footer-main></footer-main>
+        </footer>
+
+        <script>
+
+            var id = getURLParameter("id");
+            document.querySelector("project-title").id = id;
+
+            function getURLParameter(name) {
+              return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
+            }
+                
+        </script>
+      
+    </body>
+      
+</html>

@@ -1,0 +1,98 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Abundantia</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/newproject.css">
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+        <!-- build:js bower_components/webcomponentsjs/webcomponents-lite.min.js -->
+        <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+        <!-- endbuild -->
+
+        <link rel="import" href="elements/header-main.html">
+        <link rel="import" href="elements/footer-main.html">
+        <link rel="import" href="bower_components/iron-form/iron-form.html">
+        <link rel="import" href="bower_components/paper-input/paper-input.html">
+        <link rel="import" href="bower_components/paper-input/paper-textarea.html">
+        <link rel="import" href="bower_components/paper-material/paper-material.html">
+        <link rel="import" href="bower_components/paper-card/paper-card.html">
+        <link rel="import" href="bower_components/paper-button/paper-button.html">
+        <link rel="import" href="elements/image-upload.html">
+
+        <style is="custom-style">
+            .form-container {
+                --paper-card-header: {
+                    @apply(--layout-vertical);
+                    @apply(--layout-center);
+                };
+            }
+        </style>
+    </head>
+
+    <body unresolved>
+           
+        <header class="main-header"> 
+            <header-main></header-main>
+        </header>
+
+        <main class="project-new">    
+            <paper-card heading="Nuevo Proyecto" class="form-container" elevation="0">
+                <paper-card class="forms" elevation="1">
+                    <form is="iron-form" id="formProject" method="POST" action="php/newproject.php">
+                        <paper-input name="title" label="Título" required></paper-input>
+                        <paper-input char-counter maxlength="100" name="summary" label="Resumen" required></paper-input>
+                        <paper-input autocomplete list="" name="category" label="Categoría" autocomplete required></paper-input>
+                        <paper-input autocomplete list="" name="subcategory" label="Subcategoría" required></paper-input>
+                        <paper-input autocomplete list="" name="city" label="Ciudad" required></paper-input>
+                        <paper-input name="endDate" label="Fecha de Terminación" type="date" required></paper-input>
+                        <paper-input name="goal" label="Cantidad a Recolectar" type="number" required>
+                            <div prefix>$</div>
+                        </paper-input>
+                        <!-- <textarea></textarea> -->
+                        <paper-button raised onclick="submitForm()">ACEPTAR</paper-button>
+                    </form>
+                </paper-card>
+            </paper-card>  
+        </main>
+
+        <footer class="main-footer">
+            <footer-main></footer-main>
+        </footer>
+
+        <script>
+            function submitForm() {
+                form1 = document.getElementById('formProject');
+
+                form1.addEventListener('iron-form-submit', function() {
+                    window.location.href = 'index.html';
+                });
+
+                form1.submit();
+            }
+
+        </script>
+
+        <script src="//tinymce.cachefly.net/4.0/tinymce.min.js"></script>
+        <script>
+                tinymce.init({
+                    selector: "textarea",
+                    plugins: [
+                        "advlist autolink lists link image charmap print preview anchor",
+                        "searchreplace visualblocks code fullscreen",
+                        "insertdatetime media table contextmenu paste"
+                    ],
+                    toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+                });
+        </script>
+      
+    </body>   
+</html>

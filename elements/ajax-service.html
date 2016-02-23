@@ -1,0 +1,31 @@
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+
+<dom-module id="ajax-service">
+    <style>
+        :host {
+
+        }
+    </style>
+    <template>
+        <iron-ajax auto url="../php/getproject.php" handle-as="json" on-response="tasksLoaded"></iron-ajax>
+    </template>
+</dom-module>
+
+<script>
+    Polymer({
+        is: "ajax-service",
+        properties: {
+            todos: {
+                type: Array,
+                reflectToAttribute: true,
+                notify: true
+            }
+        },
+        attached: function () {
+            this.todos = [];
+        },
+        tasksLoaded: function (data) {
+            this.todos = data.detail.response;
+        }
+    });
+</script>

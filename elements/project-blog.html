@@ -1,0 +1,41 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+
+<dom-module id="project-blog">
+
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+
+    <iron-ajax
+      auto
+      url="http://localhost/Tester/php/getprojectblog.php"
+      handle-as="json"
+      last-response="{{response}}"></iron-ajax>
+
+    <template is="dom-repeat" items="{{response}}">
+      <div class="project-description">
+        <h3>Información del Proyecto</h3>
+        <p>{{item.content}}</p>
+      </div>
+    </template>
+
+  </template>
+
+</dom-module> 
+
+<script>
+  Polymer({
+    is: 'project-blog',
+
+      properties: {
+
+      },
+  });
+</script>
+
+</dom-module>
+

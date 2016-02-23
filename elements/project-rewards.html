@@ -1,0 +1,46 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+
+<dom-module id="project-rewards">
+
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+
+    <iron-ajax
+      auto
+      url="http://localhost/Tester/php/getprojectrewards.php"
+      handle-as="json"
+      last-response="{{response}}"></iron-ajax>
+    <div class="donation-bundles">
+        <h3>Paquetes para donar</h3>
+        <template is="dom-repeat" items="{{response}}">
+          <div class="bundle"> 
+          <img src="{{item.image}}">
+          <h4>{{item.price}}</h4>
+          <p>{{item.description}}</p>
+          <button type="button">Donar</button>              
+      
+        </template>
+    </div>
+  </div>
+
+  </template>
+
+</dom-module> 
+
+<script>
+  Polymer({
+    is: 'project-rewards',
+
+      properties: {
+
+      },
+  });
+</script>
+
+</dom-module>
+

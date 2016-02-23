@@ -1,0 +1,67 @@
+.profile-headline {
+	height: 400px;
+	background-color: gray;
+}
+
+.profile-headline h2 {
+	width: 500px;
+	text-align: center;
+	font-size: 2.5em;
+	margin: auto;
+	padding: 20px;
+
+}
+
+.profile-headline img {
+	display: block;
+	margin: auto;
+}
+
+.profile-stats {
+	display: block;
+	margin-top: 30px;
+}
+
+.profile-stats .stat-projects, .profile-stats .stat-donated {
+	display: inline;
+}
+
+.profile-stats .stat-projects {
+	float: left;
+	margin-left: 25%;
+}
+
+.profile-stats .stat-donated {
+	float: right;
+	margin-right: 25%;
+}
+
+.profile-stats .stat-projects .stat-name, .profile-stats .stat-donated .stat-name{
+	font-size: 1.5em;
+}
+
+.profile-stats .stat-projects .stat-value, .profile-stats .stat-donated .stat-value{
+	font-size: 2em;
+	font-weight: bold;
+}
+
+.profile-description, .category-gallery, .profile-contact {
+	padding: 0px 100px;
+	border-bottom-style: solid;
+	padding-bottom: 50px;
+}
+
+.profile-description h3, .category-gallery h3, .profile-contact h3 {
+	font-size: 1.5em;
+	width: 500px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.profile-contact a{
+	display: block;
+	text-align: center;
+	width: 300px;
+	margin: auto;
+}

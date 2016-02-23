@@ -1,0 +1,84 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+
+<!--<div>Icon made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed under <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div> -->
+<dom-module id="project-gallery">
+
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+
+      paper-card {
+        width: 300px;
+        height: 400px;
+        overflow: hidden;
+        margin-left: 25px;
+        margin-right: 25px;
+      }
+
+      paper-card img {
+        width: 100%;
+        height: 230px;
+      }
+
+      paper-icon-button {
+        color:red;
+      }
+    </style>
+
+    <iron-ajax
+      auto
+      url="{{url}}"
+      handle-as="json"
+      last-response="{{response}}"></iron-ajax>
+
+    <template is="dom-repeat" items="{{response}}">
+      <paper-card>
+        <div class="card-content">{{item.title}}</div>
+        <a href="{{item.url}}" ><img src="{{item.image}}" /></a>
+        <div class="card-content">{{item.summary}}</div>
+        <div class="card-actions">
+          <paper-icon-button src="../img/heart95.svg"></paper-icon-button>
+          <paper-button>Donar</paper-button>
+        </div>
+      </paper-card>
+    </template>
+
+  </template>
+
+</dom-module> 
+
+<script>
+  Polymer({
+    is: 'project-gallery',
+
+      properties: {
+        type: {
+          value: 'new',
+          notify: 'true'
+        },
+
+        url: {
+          computed: 'computeUrl(type)'
+        }
+
+      },
+
+      computeUrl: function(type){
+        if(type=="new"){
+          return "http://localhost/Tester/php/getprojects.php";
+        }
+        if(type=="ending"){
+          return "http://localhost/Tester/php/getprojectsending.php";
+        }
+      }
+  });
+</script>
+
+</dom-module>
+

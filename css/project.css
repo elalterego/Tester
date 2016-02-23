@@ -1,0 +1,111 @@
+.project-headline {
+	height: 400px;
+/*defined in javascript function
+	background: 
+		linear-gradient(
+      		rgba(0, 0, 0, 0.4), 
+      		rgba(0, 0, 0, 0.4)
+    	),
+    	url(http://lorempixel.com/1000/500/);
+    background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+*/
+	position: relative;
+}
+
+.project-headline h2 {
+	width: 500px;
+	text-align: center;
+	font-size: 2.5em;
+	margin: auto;
+	padding: 20px;
+	color: white;
+	z-index: 1;
+}
+
+.project-headline h3 {
+	margin: auto;
+	text-align: center;
+	max-width: 1000px;
+	color: white;
+	z-index: 1;
+}
+
+.project-stats {
+	display: block;
+	color: white;
+	width: 100%;
+	height: auto;
+	position: absolute;
+	bottom: 40px;
+	z-index: 1;
+}
+
+.project-stats .stat-donors, .project-stats .stat-donated, .project-stats .stat-daysleft {
+	display: inline;
+	float: auto;
+	margin-left: 10%;
+}
+
+.project-stats .stat-donors .stat-name, .project-stats .stat-donated .stat-name, .project-stats .stat-daysleft .stat-name{
+	font-size: 1.5em;
+}
+
+.project-stats .stat-donors .stat-value, .project-stats .stat-donated .stat-value, .project-stats .stat-daysleft .stat-value{
+	font-size: 2em;
+	font-weight: bold;
+}
+
+.project-stats button{
+	color: black;
+	font-size: 1.5em;
+	width: 150px;
+	height: 40px;
+}
+
+.project-description, .donation-bundles {
+	padding: 0px 100px;
+	border-bottom-style: solid;
+	padding-bottom: 50px;
+}
+
+.project-description h3, .donation-bundles h3 {
+	font-size: 1.5em;
+	width: 500px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.donation-bundles {
+	display: block;
+}
+
+.donation-bundles .bundle{
+	display: inline-block;
+	margin-right: auto;
+	margin-left: 20px;
+	width: 250px;
+	height: 450px;
+	background-color: gray;
+	padding-top: 10px;
+}
+
+.donation-bundles .bundle img, .donation-bundles .bundle h4, .donation-bundles .bundle p{
+	display: block;
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+	width: 220px;
+}
+
+.donation-bundles .bundle p{
+	text-align: left;
+}
+
+.donation-bundles .bundle button{
+	display: block;
+	margin: auto;
+	width: 100px; 
+}

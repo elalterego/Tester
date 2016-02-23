@@ -1,0 +1,98 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+
+<dom-module id="project-title">
+
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+
+    <iron-ajax
+      auto
+      url= "{{url}}"
+      handle-as="json"
+      on-response="hresponse"></iron-ajax>
+
+
+      <div id="project-headline" class="project-headline">
+        
+        <h2>[[projectdata.title]]</h2>
+        <h3>[[projectdata.summary]]</h3>
+        <div class="project-stats">
+          <div class="stat-donors">
+              <label class="stat-name">Donadores: </label>
+              <label class="stat-value">[[projectdata.donors]]</label>
+          </div>
+          <div class="stat-donated">
+              <label class="stat-name">Donado: </label>
+              <label class="stat-value">[[projectdata.donated]]</label>
+          </div>
+          <div class="stat-daysleft">
+              <label class="stat-name">Días restantes: </label>
+              <label class="stat-value">[[projectdata.daysLeft]]</label>
+          </div>
+          <div class="stat-daysleft">
+              <button type="button">Donar</button>
+          </div>
+        </div>
+      </div>
+    </template>
+
+  </template>
+
+</dom-module> 
+
+<script>
+  Polymer({
+    is: 'project-title',
+
+      properties: {
+        id: {
+          value: '',
+          notify: 'true'
+        },
+        url: {
+          computed: 'computeUrl(id)'
+        },
+        bgimage: {
+          value: '',
+          notify: 'true'
+        },
+        projectdata: {
+          type: 'object',
+          notify: 'true'
+        },
+        bgg: {
+          computed: 'computeBgg(bgimage)'
+        }
+
+      },
+
+      hresponse: function(request){
+        response = request.detail.response[0];
+        if(response){
+          this.projectdata = response;
+          this.bgimage = response.image;
+        }
+      },
+
+      computeUrl: function(id){
+        url = "http://localhost/Tester/php/getproject.php?id="+id+"";
+        return url;
+      },
+
+      computeBgg: function(bgimage){          
+          document.querySelector("project-title").style.background = "linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)),url('"+this.bgimage+"')";
+          document.querySelector("project-title").style.backgroundRepeat = "no-repeat";
+          document.querySelector("project-title").style.backgroundSize = "cover";
+          document.querySelector("project-title").style.backgroundPosition = "center"; 
+      }
+
+  });
+</script>
+
+</dom-module>
+

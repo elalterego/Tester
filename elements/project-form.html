@@ -1,0 +1,8 @@
+<iron-ajax id="upload" method="POST" url="/api/upload"></iron-ajax>
+
+_upload: function (e) {
+    var formData = new FormData();
+    formData.append("image", e.detail);
+    this.$.upload.body = formData
+    this.$.upload.generateRequest();
+  }
