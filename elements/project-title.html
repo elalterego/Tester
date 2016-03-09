@@ -74,6 +74,7 @@
       hresponse: function(request){
         response = request.detail.response[0];
         if(response){
+          console.log("hola");
           this.projectdata = response;
           this.bgimage = response.image;
         }
