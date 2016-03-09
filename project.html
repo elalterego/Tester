@@ -26,6 +26,13 @@
 
         <script>
 
+            var id = getURLParameter("id");
+            document.querySelector("project-title").id = id;
+
+            function getURLParameter(name) {
+              return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
+            }
+                
         </script>
     </head>
     <body>
@@ -45,16 +52,7 @@
             <footer-main></footer-main>
         </footer>
 
-        <script>
-
-            var id = getURLParameter("id");
-            document.querySelector("project-title").id = id;
-
-            function getURLParameter(name) {
-              return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
-            }
-                
-        </script>
+        
       
     </body>
       
