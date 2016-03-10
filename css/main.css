@@ -95,33 +95,24 @@ textarea {
    Author's custom styles
    ========================================================================== */
 body {
-    min-width: 1100px;
+    min-width: 960px;
     /*background-color:#F6C90E;*/
 }
 
 .main-header {
-    min-width: 854px;
-    max-width: 1200px;
-    margin: auto;
     padding: 10px 0px;
-
 }
 
-.main-header h1 {
-    display: inline;
-    margin-right: 2%
+.main-header .header-content {
+    width: 960px;
+    margin: auto;
 }
 
-.main-header h1 a {
-    display: inline;
+.main-header .logo{
+    float: left;
 }
 
-.main-header img {
-    vertical-align: baseline;
-    margin-right: 2%;
-}
-
-.main-header input {
+.main-header input[type="search"] {
     vertical-align: text-bottom;
     width: 35%;
     margin-right: 5%;
