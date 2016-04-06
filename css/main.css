@@ -106,11 +106,10 @@ body {
 .main-header .header-content {
     width: 960px;
     margin: auto;
-    height: 50px;
 }
 
 .main-header .logo{
-
+    float: left;
 }
 
 .main-header input[type="search"] {
